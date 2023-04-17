@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint -c .eslintrc . --ignore-path .gitignore",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/brentvatne/react-native-scrollable-tab-view#readme",
   "dependencies": {
-    "@react-native-community/viewpager": "3.3.0",
+    "react-native-pager-view": "^4.2.4",
     "create-react-class": "^15.6.2",
     "deprecated-react-native-prop-types": "^2.3.0",
     "prop-types": "^15.6.0",
