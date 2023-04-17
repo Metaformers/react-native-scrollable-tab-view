@@ -116,11 +116,15 @@ const ScrollableTabView = createReactClass({
   },
 
   componentDidUpdate(prevProps) {
+    const currentPage = this.state.currentPage;
     if (this.props.children !== prevProps.children) {
-      this.updateSceneKeys({ page: this.state.currentPage, children: this.props.children, });
+      if (currentPage >= props.children.length) {
+        currentPage = 0;
+      }
+      this.updateSceneKeys({ page: currentPage, children: props.children, });
     }
 
-    if (this.props.page >= 0 && this.props.page !== this.state.currentPage) {
+    if (this.props.page >= 0 && this.props.page !== currentPage) {
       this.goToPage(this.props.page);
     }
   },
