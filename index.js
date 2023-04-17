@@ -7,10 +7,8 @@ const {
   Dimensions,
   View,
   Animated,
-  ScrollView,
   Platform,
   StyleSheet,
-  InteractionManager,
 } = ReactNative;
 
 const TimerMixin = require('react-timer-mixin');
@@ -388,7 +386,7 @@ const ScrollableTabView = createReactClass({
       tabBarProps.textStyle = this.props.tabBarTextStyle;
     }
     if (this.props.tabBarUnderlineStyle) {
-      tabBarProps.underlineStyle = this.props.tabBarUnderlineStyle;
+      tabBarProps.tabBarUnderlineStyle = this.props.tabBarUnderlineStyle;
     }
     if (overlayTabs) {
       tabBarProps.style = {
