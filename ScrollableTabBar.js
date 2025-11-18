@@ -146,6 +146,10 @@ const ScrollableTabBar = createReactClass({
     </Button>;
   },
 
+  setTabContainerRef(tabContainer) {
+    this._tabContainer = tabContainer;
+  },
+
   measureTab(page, event) {
     const { x, width, height, } = event.nativeEvent.layout;
     this._tabsMeasurements[page] = {left: x, right: x + width, width, height, };
@@ -186,7 +190,7 @@ const ScrollableTabBar = createReactClass({
       >
         <View
           style={[styles.tabs, {width: this.state._containerWidth, }, this.props.tabsContainerStyle, ]}
-          ref={'tabContainer'}
+          ref={this.setTabContainerRef}
           onLayout={this.onTabContainerLayout}
         >
           {this.props.tabs.map((name, page) => {
